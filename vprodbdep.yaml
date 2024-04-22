@@ -16,14 +16,10 @@ spec:
     spec:
       containers:
       - name: vprodb
-        image: vprofile/vprofiledb:V1
+        image: vprofile/vprofiledb
         volumeMounts:
           - mountPath: /var/lib/mysql
             name: vpro-db-data
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
           - name: vprodb-port
             containerPort: 3306
