@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vprodb
-        image: jatagle/vprofiledb:latest
+        image: vprofile/vprofiledb:V1
         volumeMounts:
           - mountPath: /var/lib/mysql
             name: vpro-db-data
@@ -43,7 +43,7 @@ spec:
 
       initContainers:
         - name: busybox
-          image: busybox:late
+          image: busybox:latest
           args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
           volumeMounts:
             - name: vpro-db-data
